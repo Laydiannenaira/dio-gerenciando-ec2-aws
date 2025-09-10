@@ -28,11 +28,11 @@ No modelo de nuvem, o EC2 é um exemplo de **Infraestrutura como Serviço (IaaS)
 
 O primeiro passo foi provisionar uma instância EC2. A tela abaixo confirma que a instância foi criada com sucesso e está em estado de execução (`running`).
 
-![Visão Geral da Instância EC2](images/instanciacriada.png)
+![Visão Geral da Instância EC2](imagens/instanciacriada.png)
 
 A escolha da instância correta é crucial para garantir a eficiência e a economia. Para este projeto, foi utilizada uma instância do tipo `t2.nano`, adequada para tarefas de desenvolvimento e testes.
 
-![Detalhes da Instância EC2](images/instanciadetalhes.png)
+![Detalhes da Instância EC2](imagens/instanciadetalhes.png)
 
 ### 2.2. Configuração de Segurança (Grupo de Segurança)
 
@@ -40,7 +40,7 @@ Para proteger a instância, utilizei um **Grupo de Segurança**, que funciona co
 
 A imagem a seguir mostra as regras de entrada (`Inbound Rules`) que configurei, permitindo o acesso via SSH (porta 22), que é essencial para o gerenciamento remoto da máquina.
 
-![Regras de Entrada do Grupo de Segurança](images/instancia-seguranca.png)
+![Regras de Entrada do Grupo de Segurança](imagens/instancia-seguranca.png)
 
 ### 2.3. Otimização de Custos
 
@@ -48,7 +48,7 @@ Um dos princípios fundamentais da nuvem é a otimização de recursos, que est�
 
 Como demonstrado abaixo, a instância foi parada (`stopping`). Ao parar a instância, os recursos de CPU, memória e rede são desativados, e a cobrança é suspensa.grupo-de-seguranca
 
-![Instância EC2 parada](images/instancia-parada.png)
+![Instância EC2 parada](imagens/instancia-parada.png)
 
 ---
 
