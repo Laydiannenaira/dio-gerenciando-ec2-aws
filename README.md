@@ -52,7 +52,65 @@ Como demonstrado abaixo, a instância foi parada (`stopping`). Ao parar a instâ
 
 ---
 
-## 3. Conclusão e Aprendizados
+Outra abordagem que podemos acrescentar é:
+
+## 3. Armazenamento na Nuvem com EC2
+
+### 3.1. Amazon EBS (Elastic Block Store)
+
+Amazon EBS é uma storage altamente confiável que pode ser anexada a qualquer instância EC2. Toda instância possui um volume de armazenamento, mas com o EBS conseguimos ter a capacidade de expansão de forma rápida, com apenas alguns cliques.
+
+Com o EBS, podemos criar uma nova partição em nossa instância, funcionando como se estivéssemos anexando um "HD externo". Escolhemos o modelo e o tamanho e anexamos à nossa VM.
+
+Exemplos de uso para Amazon EBS:
+
+- Armazenamento para bancos de dados, como MySQL, PostgreSQL e Oracle.
+- Armazenar dados para aplicativos web e logs de sistema.
+
+### 3.2. Amazon S3 (Simple Storage Service)
+
+Amazon S3 é um serviço de armazenamento de objetos em nuvem oferecido pela AWS. É ideal para armazenar, organizar e recuperar grandes volumes de dados de forma segura e escalável. O S3 possui classes de armazenamento que permitem economizar nos custos. É possível utilizar regras de ciclo de vida (Lifecycle) para definir como o Amazon S3 gerencia os objetos, permitindo a transição automática de objetos para classes como Glacier ao longo do tempo.
+
+---
+
+## 4. Otimização de Recursos na AWS (Foco em EC2)
+
+A otimização de recursos na AWS está diretamente ligada à redução de custos. Mesmo ao melhorar o desempenho de um sistema, estamos poupando custos, pois isso traz ganho para a nossa solução na nuvem.
+
+### 4.1. Estratégias de Otimização de Recursos
+
+**Desligando Instâncias Não Utilizadas:** Em ambientes de desenvolvimento, testes ou treinamento que não são utilizados durante a noite ou nos fins de semana, as instâncias podem ser desligadas, resultando em menor utilização e poupança.
+
+**Remover Recursos Ociosos ou Não Utilizados:** Criar recursos e não verificar sua utilização pode levar a ter vários recursos ociosos no ambiente, gerando gastos desnecessários. Isso é comparado a alugar um carro e deixá-lo na garagem.
+
+**Escalar Recursos:** Executamos o "scale" de recursos para processar "workloads" em determinados momentos. Temos a opção de aumentar ou diminuir de forma manual ou automática.
+
+- **Escalonamento Verticalmente:** Significa acrescentar ou reduzir capacidade de um recurso em um mesmo nó. Geralmente está relacionado a alterar o número de vCPUs, memória, storage, rede de uma instância.
+- **Escalonamento Horizontalmente:** É quando você aumenta o número de recursos. Por exemplo, adicionando mais um disco rígido ou adicionando mais uma instância para suportar a aplicação.
+
+### 4.2. Opções de Compra de Instâncias EC2 para Otimização de Custos
+
+A AWS oferece diferentes modelos de compra para instâncias EC2, cada um com suas características e benefícios de custo:
+
+**1. Sob Demanda (On-Demand):**
+
+- Instâncias compradas a uma taxa fixa por hora.
+- Recomendadas para aplicativos com cargas de trabalho irregulares de curto prazo que não podem ser interrompidas.
+- Adequadas para uso durante o teste e desenvolvimento de aplicativos no EC2.
+
+**2. Instâncias Reservadas (Reserved Instances):**
+
+- Costumam ser mais baratas que as instâncias sob demanda.
+- A desvantagem é a necessidade de pagar o ano inteiro de uso, o que pode ser uma desvantagem para quem não precisa usar a instância com frequência.
+
+**3. Instâncias SPOT:**
+
+- Garantem a disponibilidade das aplicações sob demanda com descontos de até 90%.
+- A principal desvantagem é que podem ser encerradas pela Amazon Web Service (AWS) a qualquer momento, com um aviso de dois minutos.
+
+---
+
+## 5. Conclusão e Aprendizados
 
 Este desafio me permitiu aplicar, na prática, os conceitos teóricos sobre EC2 e gerenciamento de nuvem. Através deste exercício, pude entender a importância de:
 
