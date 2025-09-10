@@ -1,6 +1,6 @@
 # Desafio de Gerenciamento de Instâncias EC2 na AWS
 
-**Autor:** [Seu Nome Completo]
+**Autor:** Laydianne Costa
 
 **Projeto:** Conclusão do desafio de laboratório da Formação AWS Cloud Foundations, com foco em Gerenciamento de Instâncias EC2.
 
@@ -8,17 +8,17 @@
 
 ## 1. Introdução: O Que é EC2?
 
-[cite_start]O Amazon Elastic Compute Cloud (EC2) é um serviço da AWS que nos fornece a capacidade de computação na nuvem, atuando como máquinas virtuais com sistemas operacionais Windows ou Linux[cite: 1, 2].
+O Amazon Elastic Compute Cloud (EC2) é um serviço da AWS que nos fornece a capacidade de computação na nuvem, atuando como máquinas virtuais com sistemas operacionais Windows ou Linux.
 
 Uma instância EC2 é composta por diversos recursos, como:
 
-- [cite_start]**CPU** [cite: 1]
-- [cite_start]**Memória** [cite: 1]
-- [cite_start]**Disco** [cite: 1]
-- [cite_start]**Rede** [cite: 1]
-- [cite_start]**Sistema Operacional** [cite: 1]
+- **CPU**
+- **Memória**
+- **Disco**
+- **Rede**
+- **Sistema Operacional**
 
-No modelo de nuvem, o EC2 é um exemplo de **Infraestrutura como Serviço (IaaS)**. [cite_start]Isso significa que, ao usar esse serviço, nossa responsabilidade se concentra em gerenciar os aplicativos, dados e as conexões que estabelecemos com a instância[cite: 1].
+No modelo de nuvem, o EC2 é um exemplo de **Infraestrutura como Serviço (IaaS)**. Isso significa que, ao usar esse serviço, nossa responsabilidade se concentra em gerenciar os aplicativos, dados e as conexões que estabelecemos com a instância.
 
 ---
 
@@ -28,25 +28,25 @@ No modelo de nuvem, o EC2 é um exemplo de **Infraestrutura como Serviço (IaaS)
 
 O primeiro passo foi provisionar uma instância EC2. A tela abaixo confirma que a instância foi criada com sucesso e está em estado de execução (`running`).
 
-![Visão Geral da Instância EC2](images/instancia-em-execucao.png)
+![Visão Geral da Instância EC2](images/instanciacriada.png)
 
-[cite_start]A escolha da instância correta é crucial para garantir a eficiência e a economia[cite: 1]. Para este projeto, foi utilizada uma instância do tipo `t2.nano`, adequada para tarefas de desenvolvimento e testes.
+A escolha da instância correta é crucial para garantir a eficiência e a economia. Para este projeto, foi utilizada uma instância do tipo `t2.nano`, adequada para tarefas de desenvolvimento e testes.
 
-![Detalhes da Instância EC2](images/detalhes-instancia.png)
+![Detalhes da Instância EC2](images/instanciadetalhes.png)
 
 ### 2.2. Configuração de Segurança (Grupo de Segurança)
 
-[cite_start]Para proteger a instância, utilizei um **Grupo de Segurança**, que funciona como um firewall embutido na AWS[cite: 1]. Ele permite controlar o tráfego de rede para a instância.
+Para proteger a instância, utilizei um **Grupo de Segurança**, que funciona como um firewall embutido na AWS. Ele permite controlar o tráfego de rede para a instância.
 
 A imagem a seguir mostra as regras de entrada (`Inbound Rules`) que configurei, permitindo o acesso via SSH (porta 22), que é essencial para o gerenciamento remoto da máquina.
 
-![Regras de Entrada do Grupo de Segurança](images/grupo-de-seguranca.png)
+![Regras de Entrada do Grupo de Segurança](images/instancia-seguranca.png)
 
 ### 2.3. Otimização de Custos
 
-[cite_start]Um dos princípios fundamentais da nuvem é a otimização de recursos, que está diretamente ligada à economia de custos[cite: 2]. [cite_start]Desligar recursos não utilizados em ambientes de desenvolvimento, teste ou treinamento é uma das principais formas de poupar gastos, já que a cobrança é baseada no tempo de execução[cite: 2].
+Um dos princípios fundamentais da nuvem é a otimização de recursos, que está diretamente ligada à economia de custos[cite: 2]. Desligar recursos não utilizados em ambientes de desenvolvimento, teste ou treinamento é uma das principais formas de poupar gastos, já que a cobrança é baseada no tempo de execução[cite: 2].
 
-Como demonstrado abaixo, a instância foi parada (`stopping`). Ao parar a instância, os recursos de CPU, memória e rede são desativados, e a cobrança é suspensa.
+Como demonstrado abaixo, a instância foi parada (`stopping`). Ao parar a instância, os recursos de CPU, memória e rede são desativados, e a cobrança é suspensa.grupo-de-seguranca
 
 ![Instância EC2 parada](images/instancia-parada.png)
 
